@@ -1,29 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>自己紹介</title>
-  <link rel="stylesheet" href="style.css">
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>プロフィール - 中立なIT伴走パートナー</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>自己紹介</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">ホーム</a></li>
-        <li><a href="portfolio.html">ポートフォリオ</a></li>
-        <li><a href="about.html">自己紹介</a></li>
-        <li><a href="contact.html">連絡</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <h2>藤田 和希</h2>
-    <p>PHP・C#・SQLを中心に学習・開発しています。将来的にはフリーランスとして活動予定です。</p>
+  <main class="container">
+    <section class="profile-card">
+      <div class="avatar-wrap">
+        <!-- avatar.jpg をご自身の実写写真ファイル名に置き換えてください -->
+        <img src="avatar.jpg" alt="プロフィール写真" class="avatar">
+      </div>
+      <div class="profile-body">
+        <h1 class="name">中立で包容力のあるIT伴走パートナー</h1>
+        <p class="lead">「どちらも正しい」を前提に、ITと業務改善の最適な組み合わせを提案します。</p>
+
+        <div class="meta">
+          <p>経歴：経理 → 営業 → エンジニア（Laravel / PHP / C#）。</p>
+          <p>個人開発：Laravelで家庭菜園アプリを開発中。</p>
+          <p>好きなもの：銀河高原ビールをこよなく愛するひと 🍺</p>
+        </div>
+
+        <section class="philosophy">
+          <h2>伴走型サポートについて</h2>
+          <p>導入して終わりではなく、運用・改善まで寄り添います。特定ベンダーに偏らず、現場と数字を見て「最適な組み合わせ」を一緒に探します。</p>
+          <ul>
+            <li>ヒアリング重視：現場の声を大切にします</li>
+            <li>数字で提案：経理経験を活かした根拠ある改善案</li>
+            <li>実装・運用支援：簡易ツールのプロトタイプから運用まで対応</li>
+          </ul>
+        </section>
+
+        <nav class="actions">
+          <a class="btn" href="portfolio.html">ポートフォリオを見る</a>
+          <a class="btn outline" href="#contact">相談・連絡する</a>
+        </nav>
+      </div>
+    </section>
+
   </main>
-  <footer>
-    &copy; 2025 Kazuki Fujita
+
+  <footer class="site-footer" id="contact" aria-label="連絡先">
+    <div class="footer-inner">
+      <div class="contact-left">
+        <p>まずはお気軽にご相談ください。</p>
+      </div>
+      <div class="contact-right">
+        <!-- ここを実際のリンクに置き換えてください -->
+        <a href="mailto:your.email@example.com" class="footer-link">メール</a>
+        <a href="https://twitter.com/your_x_account" class="footer-link">X（@your_x_account）</a>
+        <a href="https://github.com/your_github" class="footer-link">GitHub</a>
+      </div>
+    </div>
   </footer>
 </body>
 </html>
