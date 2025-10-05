@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HumanLink Inc. | 人と企業をつなぐ人材サービス</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="text-gray-800">
+
+  <!-- ヘッダー読込 -->
+  <div data-include="partials/header.html"></div>
+
+  <!-- メインビジュアル -->
+  <section class="h-screen flex items-center justify-center bg-cover bg-center" style="background-image:url('img/hero.jpg');">
+    <div class="bg-white bg-opacity-70 p-10 rounded-xl text-center" data-aos="fade-up">
+      <h2 class="text-4xl font-bold mb-4 text-gray-700">人と企業をつなぎ、未来を創る</h2>
+      <p class="text-lg text-gray-600 mb-6">HumanLinkは成長企業と働く人の架け橋になります。</p>
+      <a href="service.html" class="px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition">サービスを見る</a>
+    </div>
+  </section>
+
+  <!-- 事業紹介 -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6 text-center">
+      <h3 class="text-2xl font-bold mb-10" data-aos="fade-up">私たちのサービス</h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow" data-aos="fade-up">
+          <h4 class="font-bold mb-3">人材紹介</h4>
+          <p>即戦力人材の採用支援を行います。</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow" data-aos="fade-up" data-aos-delay="100">
+          <h4 class="font-bold mb-3">キャリア支援</h4>
+          <p>転職希望者に最適なキャリアを提案します。</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow" data-aos="fade-up" data-aos-delay="200">
+          <h4 class="font-bold mb-3">コンサルティング</h4>
+          <p>企業の採用課題を解決する戦略を立案します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- フッター読込 -->
+  <div data-include="partials/footer.html"></div>
+
+  <!-- JS読込 -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/include.js"></script>
+  <script>
+    AOS.init({ duration: 1000 });
+  </script>
+</body>
+</html>
