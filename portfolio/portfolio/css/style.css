@@ -127,8 +127,9 @@ section {
   transition: all 0.3s ease;
 }
 
- メニュー開閉アニメーション用に拡張したい場合（任意）
+/* メニュー開閉アニメーション用に拡張したい場合（任意）
 #mobile-menu.show {
   opacity: 1;
   transform: translateY(0);
 }
+*/
