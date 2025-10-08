@@ -65,3 +65,49 @@ body {
     font-size: 1rem;
   }
 }
+
+/* === 背景セクション === */
+.hero-section {
+  background-image: url('../img/hero.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Recruit ページ背景 */
+.recruit-hero {
+  background-image: url('../img/recruit-bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Service ページ背景 */
+.service-hero {
+  background-size: cover;
+  background-position: center;
+}
+
+.service-hero-1 { background-image: url('../img/service-bg1.jpg'); }
+.service-hero-2 { background-image: url('../img/service-bg2.jpg'); }
+.service-hero-3 { background-image: url('../img/service-bg3.jpg'); }
+
+/* 採用情報内ブロック背景 */
+.recruit-block-sales {
+  background-image: url('../img/sales-bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.recruit-block-career {
+  background-image: url('../img/career-bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* === 汎用 === */
+.bg-overlay {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+section {
+  position: relative;
+  overflow: hidden;
+}

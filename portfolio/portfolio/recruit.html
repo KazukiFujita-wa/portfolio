@@ -8,42 +8,43 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="text-gray-800">
+
   <div data-include="partials/header.html"></div>
 
-  <section class="py-20 bg-gradient-to-r from-green-100 to-blue-50 text-center">
-    <div class="container mx-auto px-6" data-aos="fade-up">
-      <h2 class="text-3xl font-bold mb-4">採用情報</h2>
-      <p class="text-gray-700 max-w-2xl mx-auto">
-        「人の成長を支援する」ことを共に実現できる仲間を募集しています。
-      </p>
+  <!-- メインビジュアル -->
+  <section class="recruit-hero h-96 flex items-center justify-center text-white">
+    <div class="bg-overlay p-10 rounded-xl text-center" data-aos="fade-up">
+      <h2 class="text-4xl font-bold text-gray-800">採用情報</h2>
+      <p class="text-lg text-gray-700 mt-4">共に成長し、未来を創る仲間を募集しています。</p>
     </div>
   </section>
 
-  <section class="py-16">
-    <div class="container mx-auto grid md:grid-cols-2 gap-10 px-6" data-aos="fade-up">
-      <div class="bg-white p-8 rounded-lg shadow">
-        <h3 class="text-xl font-bold mb-3 text-green-600">営業職</h3>
-        <p class="mb-3">企業と求職者のマッチングを支援し、採用課題を解決します。</p>
-        <p><span class="font-bold">給与:</span> 月給25万円〜</p>
-        <p><span class="font-bold">勤務地:</span> 東京本社</p>
-      </div>
-      <div class="bg-white p-8 rounded-lg shadow">
-        <h3 class="text-xl font-bold mb-3 text-green-600">キャリアアドバイザー</h3>
-        <p class="mb-3">転職希望者のキャリア相談や求人提案を行います。</p>
-        <p><span class="font-bold">給与:</span> 月給24万円〜</p>
-        <p><span class="font-bold">勤務地:</span> 東京本社／リモート可</p>
+  <!-- 採用職種 -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <h3 class="text-2xl font-bold mb-10 text-center" data-aos="fade-up">募集職種</h3>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="recruit-block-sales rounded-lg shadow-lg p-8 text-white relative" data-aos="fade-right">
+          <div class="bg-overlay p-6 rounded-lg text-gray-800">
+            <h4 class="font-bold text-xl mb-3">営業職</h4>
+            <p>企業と求職者の架け橋となり、最適なマッチングを実現します。</p>
+          </div>
+        </div>
+
+        <div class="recruit-block-career rounded-lg shadow-lg p-8 text-white relative" data-aos="fade-left">
+          <div class="bg-overlay p-6 rounded-lg text-gray-800">
+            <h4 class="font-bold text-xl mb-3">キャリアアドバイザー</h4>
+            <p>転職希望者と共にキャリアの可能性を探り、最良の提案を行います。</p>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
-
-  <section class="text-center pb-20">
-    <a href="contact.html" class="px-8 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition">
-      応募する
-    </a>
   </section>
 
   <div data-include="partials/footer.html"></div>
+
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="js/include.js"></script>
   <script>AOS.init({ duration: 1000 });</script>

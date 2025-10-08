@@ -8,40 +8,48 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="text-gray-800">
+
   <div data-include="partials/header.html"></div>
 
-  <section class="bg-green-100 py-20 text-center">
-    <div class="container mx-auto" data-aos="fade-up">
-      <h2 class="text-3xl font-bold mb-4">サービス紹介</h2>
-      <p class="text-gray-700">人材紹介・キャリア支援・採用コンサルティングの3つの領域で企業と人を支援します。</p>
+  <!-- メインビジュアル -->
+  <section class="h-96 flex items-center justify-center bg-green-700 text-white">
+    <div data-aos="fade-up">
+      <h2 class="text-4xl font-bold mb-3">サービス</h2>
+      <p class="text-lg">HumanLinkが提供する多様な人材サービスをご紹介します。</p>
     </div>
   </section>
 
-  <section class="py-16">
-    <div class="container mx-auto grid md:grid-cols-3 gap-8 px-6">
-      <div class="bg-white p-8 rounded-lg shadow" data-aos="fade-up">
-        <h3 class="text-xl font-bold mb-3 text-green-600">人材紹介</h3>
-        <p>求める人物像に沿った人材を迅速にご紹介し、採用コストを最適化します。</p>
-      </div>
-      <div class="bg-white p-8 rounded-lg shadow" data-aos="fade-up" data-aos-delay="100">
-        <h3 class="text-xl font-bold mb-3 text-green-600">キャリア支援</h3>
-        <p>求職者のライフプランに基づくキャリア提案を行い、長期的な成長をサポートします。</p>
-      </div>
-      <div class="bg-white p-8 rounded-lg shadow" data-aos="fade-up" data-aos-delay="200">
-        <h3 class="text-xl font-bold mb-3 text-green-600">採用コンサル</h3>
-        <p>採用戦略の立案・改善を通して、企業の持続的な人材獲得を実現します。</p>
-      </div>
-    </div>
-  </section>
+  <!-- 各サービス -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6 space-y-16">
 
-  <section class="text-center py-12 bg-gray-50">
-    <a href="contact.html" class="px-8 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition">
-      無料相談する
-    </a>
+      <div class="service-hero service-hero-1 rounded-xl p-10 text-white" data-aos="fade-up">
+        <div class="bg-overlay p-8 rounded-lg text-gray-800">
+          <h3 class="text-2xl font-bold mb-3">人材紹介</h3>
+          <p>成長企業への即戦力人材の採用支援を行います。</p>
+        </div>
+      </div>
+
+      <div class="service-hero service-hero-2 rounded-xl p-10 text-white" data-aos="fade-up" data-aos-delay="100">
+        <div class="bg-overlay p-8 rounded-lg text-gray-800">
+          <h3 class="text-2xl font-bold mb-3">キャリア支援</h3>
+          <p>転職希望者のキャリアを共に設計し、最適な道を導きます。</p>
+        </div>
+      </div>
+
+      <div class="service-hero service-hero-3 rounded-xl p-10 text-white" data-aos="fade-up" data-aos-delay="200">
+        <div class="bg-overlay p-8 rounded-lg text-gray-800">
+          <h3 class="text-2xl font-bold mb-3">採用コンサルティング</h3>
+          <p>企業の採用課題を解決する戦略立案・実行をサポートします。</p>
+        </div>
+      </div>
+
+    </div>
   </section>
 
   <div data-include="partials/footer.html"></div>
+
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="js/include.js"></script>
   <script>AOS.init({ duration: 1000 });</script>
