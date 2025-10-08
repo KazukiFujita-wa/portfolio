@@ -1,16 +1,45 @@
 <header class="bg-white shadow-md fixed w-full z-50">
   <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <!-- ロゴ -->
     <h1 class="text-2xl font-bold text-green-600">
       <a href="index.html">HumanLink Inc.</a>
     </h1>
-    <nav class="space-x-6">
-      <a href="index.html" class="text-gray-700 hover:text-green-500">ホーム</a>
-      <a href="service.html" class="text-gray-700 hover:text-green-500">サービス</a>
-      <a href="recruit.html" class="text-gray-700 hover:text-green-500">採用情報</a>
-      <a href="contact.html" class="text-gray-700 hover:text-green-500">お問い合わせ</a>
+
+    <!-- ナビゲーション -->
+    <nav class="hidden md:flex space-x-6">
+      <a href="index.html" class="nav-link">ホーム</a>
+      <a href="service.html" class="nav-link">サービス</a>
+      <a href="recruit.html" class="nav-link">採用情報</a>
+      <a href="contact.html" class="nav-link">お問い合わせ</a>
+    </nav>
+
+    <!-- ハンバーガーボタン -->
+    <button id="menu-btn" class="md:hidden flex flex-col space-y-1 focus:outline-none">
+      <span class="w-6 h-0.5 bg-gray-700"></span>
+      <span class="w-6 h-0.5 bg-gray-700"></span>
+      <span class="w-6 h-0.5 bg-gray-700"></span>
+    </button>
+  </div>
+
+  <!-- モバイルメニュー -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+    <nav class="flex flex-col items-center space-y-4 py-6">
+      <a href="index.html" class="nav-link">ホーム</a>
+      <a href="service.html" class="nav-link">サービス</a>
+      <a href="recruit.html" class="nav-link">採用情報</a>
+      <a href="contact.html" class="nav-link">お問い合わせ</a>
     </nav>
   </div>
 </header>
 
-<!-- ヘッダーの高さ分の余白 -->
+<!-- ヘッダー高さ調整 -->
 <div class="pt-20"></div>
+
+<script>
+  // モバイルメニュー開閉
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>

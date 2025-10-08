@@ -111,3 +111,24 @@ section {
   position: relative;
   overflow: hidden;
 }
+
+/* === ヘッダー関連 === */
+.nav-link {
+  color: #374151; /* gray-700 */
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #10b981; /* green-500 */
+}
+
+/* モバイルメニューのアニメーション */
+#mobile-menu {
+  transition: all 0.3s ease;
+}
+
+ メニュー開閉アニメーション用に拡張したい場合（任意）
+#mobile-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+}
