@@ -1,0 +1,67 @@
+/* ==============================
+   Heroセクション
+============================== */
+.hero {
+  height: 100vh;
+  background-image: url('../images/32583646_l.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 2.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  color: #374151; /* Tailwind gray-700 */
+}
+
+.hero-content h2 {
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.125rem; /* text-lg */
+  margin-bottom: 1.5rem;
+  color: #4b5563; /* gray-600 */
+}
+
+.hero-btn {
+  background-color: #10b981; /* green-500 */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #059669; /* green-600 */
+}
+
+/* ==============================
+   共通設定
+============================== */
+body {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+/* ==============================
+   レスポンシブ対応
+============================== */
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 1.5rem;
+  }
+  .hero-content h2 {
+    font-size: 1.75rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
