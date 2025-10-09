@@ -1,197 +1,254 @@
-/* ===============================
-   ベース設定
-   =============================== */
 body {
-  font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
-  color: #333;
+  font-family: 'Noto Sans JP', sans-serif;
   margin: 0;
-  padding: 0;
-  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-/* ===============================
-   ヘッダー
-   =============================== */
+/* Header */
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  z-index: 1000;
-  transition: all 0.3s ease;
-}
-
-.header-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 70px;
-  padding: 0 1.5rem;
+  padding: 1rem 3rem;
+  background: #fff;
+  border-bottom: 1px solid #eee;
 }
 
 .logo {
   font-size: 1.5rem;
-  font-weight: bold;
-  color: #2a5a3d;
-}
-
-/* ===============================
-   ナビゲーション
-   =============================== */
-.nav {
-  display: flex;
-  gap: 1.5rem;
+  color: #3a5a40;
+  font-weight: 400;
 }
 
 .nav a {
+  margin-left: 1.5rem;
   color: #333;
-  font-size: 0.95rem;
-  font-weight: 500;
-  transition: color 0.2s;
+  text-decoration: none;
+  font-weight: 300;
 }
-
 .nav a:hover {
-  color: #2a5a3d;
+  color: #3a5a40;
 }
 
-/* ===============================
-   ハンバーガーメニュー
-   =============================== */
-.toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  cursor: pointer;
-  width: 30px;
-  height: 25px;
-}
-
-.toggle span {
-  background: #333;
-  height: 3px;
-  width: 100%;
-  margin: 4px 0;
-  transition: all 0.4s ease;
-}
-
-/* 開閉時のアニメーション */
-.toggle.open span:nth-child(1) {
-  transform: rotate(45deg) translateY(8px);
-}
-.toggle.open span:nth-child(2) {
-  opacity: 0;
-}
-.toggle.open span:nth-child(3) {
-  transform: rotate(-45deg) translateY(-8px);
-}
-
-/* ===============================
-   モバイル対応
-   =============================== */
-@media (max-width: 768px) {
-  .toggle {
-    display: flex;
-  }
-
-  .nav {
-    display: none;
-    position: absolute;
-    top: 100%; /* 通常時はヘッダーの下 */
-    left: 0;
-    right: 0;
-    background: #fff;
-    flex-direction: column;
-    align-items: center;
-    border-top: 1px solid #eee;
-    padding: 1.5rem 0;
-    z-index: 1005;
-    transition: top 0.3s ease, opacity 0.3s ease;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-  }
-
-  .nav.active {
-    display: flex;
-    top: 0; /* メニューを上にスライド表示 */
-  }
-
-  .nav a {
-    padding: 0.75rem 0;
-    width: 100%;
-    text-align: center;
-    font-size: 1.1rem;
-  }
-
-  /* メニュー開閉時にヘッダーも変化 */
-  .header.menu-open {
-    background-color: #fff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  }
-}
-
-/* ===============================
-   Heroセクション（例）
-   =============================== */
+/* Hero */
 .hero {
-  height: 100vh;
-  background: url('https://placehold.co/1600x900?text=Salon+Hero') center/cover no-repeat;
+  height: 90vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   color: #fff;
-  text-align: center;
-  position: relative;
+}
+.hero-overlay h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.btn {
+  background: #3a5a40;
+  color: #fff;
+  padding: 0.8rem 2rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.btn:hover {
+  background: #2f4c36;
 }
 
-.hero::before {
-  content: '';
+/* Page hero */
+.page-hero {
+  height: 40vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.page-hero::after {
+  content: "";
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0.4);
 }
-
-.hero h1 {
-  font-size: 2.5rem;
-  font-weight: 300;
-  z-index: 2;
-}
-
-/* ===============================
-   共通セクション
-   =============================== */
-section {
-  padding: 80px 0;
-}
-
-h2 {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 400;
-  color: #333;
-  margin-bottom: 40px;
-}
-
-footer {
-  text-align: center;
-  background: #2a5a3d;
+.page-hero h2 {
+  position: relative;
   color: #fff;
-  padding: 2rem;
+  font-size: 2rem;
+}
+
+/* About / Sections */
+.about, .menu-list, .staff, .contact {
+  padding: 4rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.about img {
+  width: 100%;
+  margin-top: 1.5rem;
+  border-radius: 8px;
+}
+
+/* Menu */
+.menu-list ul {
+  list-style: none;
+  padding: 0;
+}
+.menu-list li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dotted #ccc;
+  padding: 0.7rem 0;
+  font-size: 1.1rem;
+}
+
+/* Staff */
+.staff {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+.staff-member img {
+  width: 100%;
+  border-radius: 8px;
+}
+.staff-member h3 {
+  margin: 0.8rem 0 0.3rem;
+  color: #3a5a40;
+}
+
+/* Contact */
+.contact form {
+  display: flex;
+  flex-direction: column;
+}
+.contact label {
+  margin-top: 1rem;
+}
+.contact input, .contact textarea {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+}
+.contact button {
+  margin-top: 1.5rem;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background: #f5f5f5;
+  color: #777;
   font-size: 0.9rem;
+}
+
+/* =========================
+   📱 Responsive Design
+   ========================= */
+
+/* タブレット以下 */
+@media (max-width: 1024px) {
+  .header {
+    padding: 1rem 1.5rem;
+  }
+  .nav a {
+    margin-left: 1rem;
+    font-size: 0.95rem;
+  }
+  .hero-overlay h2 {
+    font-size: 1.8rem;
+  }
+  .about, .menu-list, .staff, .contact {
+    padding: 3rem 1.5rem;
+  }
+}
+
+/* スマホ（ハンバーガーメニュー導入） */
+@media (max-width: 768px) {
+  /* ナビゲーション非表示（デフォルト） */
+  .nav {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    border-top: 1px solid #eee;
+  }
+  .nav.active {
+    display: flex;
+  }
+
+  /* ヘッダー配置 */
+  .header {
+    position: relative;
+  }
+
+  /* ハンバーガーアイコン */
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+  }
+  .menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #3a5a40;
+    transition: 0.3s;
+  }
+
+  /* ロゴ中央寄せ */
+  .header {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Hero */
+  .hero-overlay h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0 1rem;
+  }
+
+  /* 各セクション */
+  .about, .menu-list, .staff, .contact {
+    padding: 2rem 1rem;
+  }
+
+  /* スタッフカード */
+  .staff {
+    grid-template-columns: 1fr;
+  }
+
+  /* メニュー */
+  .menu-list li {
+    font-size: 1rem;
+  }
+}
+
+/* スマホ小画面（iPhone SEなど） */
+@media (max-width: 480px) {
+  .hero-overlay h2 {
+    font-size: 1.2rem;
+  }
+  .btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  .logo {
+    font-size: 1.2rem;
+  }
 }
