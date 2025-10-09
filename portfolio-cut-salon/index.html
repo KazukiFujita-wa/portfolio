@@ -28,7 +28,7 @@
   <section class="about">
     <h2>Leafのこだわり</h2>
     <p>Leafは「自然体で美しく」をテーマにしたカットサロン。白と緑を基調とした落ち着いた空間で、あなたらしいスタイルを提案します。</p>
-    <img src="images/aig-ai230817HK002-xl_TP_V.jpg" alt="サロン内観">
+    <img src="images/ai" alt="サロン内観">
   </section>
 
   <footer class="footer">
@@ -36,28 +36,16 @@
   </footer>
 
   <script>
-  const toggle = document.createElement('div');
-  toggle.className = 'menu-toggle';
-  toggle.innerHTML = '<span></span><span></span><span></span>';
-  document.querySelector('.header').prepend(toggle);
+    const toggle = document.createElement('div');
+    toggle.className = 'menu-toggle';
+    toggle.innerHTML = '<span></span><span></span><span></span>';
+    document.querySelector('.header').prepend(toggle);
 
-  const nav = document.querySelector('.nav');
-  toggle.addEventListener('click', () => {
-    nav.classList.toggle('active');
-    toggle.classList.toggle('open');
-  });
-
-  const openMenu = () => {
-  nav.classList.add('active');
-  toggle.classList.add('open');
-  header.classList.add('menu-open'); // ← 追加
-  };
-
-  const closeMenu = () => {
-  nav.classList.remove('active');
-  toggle.classList.remove('open');
-  header.classList.remove('menu-open'); // ← 追加
-  };
-</script>
+    const nav = document.querySelector('.nav');
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+      toggle.classList.toggle('open');
+    });
+  </script>
 </body>
 </html>
