@@ -280,35 +280,42 @@ body {
   transition: 0.3s;
 }
 
-/* モバイル時に表示 */
+/* ===============================
+   モバイルメニューの位置調整
+   =============================== */
 @media (max-width: 768px) {
-  .menu-toggle { display:block; }
-
-  /* ナビはヘッダー直下に置く（ヘッダー内に置いてもOK） */
   .nav {
     display: none;
     position: absolute;
-    top: 100%; /* ヘッダーの下に表示 */
+    top: 100%; /* 通常時：ヘッダーの下 */
     right: 0;
     left: 0;
     background: #fff;
     border-top: 1px solid #eee;
-    z-index: 10005; /* ヘッダーよりやや上 */
+    z-index: 10005;
     flex-direction: column;
     padding: 1rem;
     box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-  }
-  .nav.active {
-    display: flex;
+    transition: top 0.3s ease;
   }
 
-  /* nav内リンクをタップしやすく */
-  .nav a {
-    padding: 0.75rem 0;
-    display: block;
-    width: 100%;
+  /* メニューを開いたときに、navを少し上にずらす */
+  .nav.active {
+    display: flex;
+    top: 0; /* ←ここがポイント！ */
+  }
+
+  /* スクロール時や開閉の動きが滑らかになる */
+  .header {
+    transition: all 0.3s ease;
+  }
+
+  /* メニューが開いた時はheaderの背景を白で統一（見やすく） */
+  .header.menu-open {
+    background-color: #fff;
   }
 }
+
 
 /* Hero等がヘッダーより前に来てしまう場合は hero の z-index を下げる */
 .hero, .page-hero {
