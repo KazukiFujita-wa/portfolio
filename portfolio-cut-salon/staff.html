@@ -4,56 +4,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>スタッフ紹介 | Leaf Hair Salon</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
 </head>
-<body class="text-gray-800 font-sans">
-
-  <!-- ヘッダー -->
-  <header class="fixed w-full bg-white shadow-sm z-50">
-    <div class="container mx-auto flex justify-between items-center p-4">
-      <h1 class="text-2xl font-bold text-green-700">Leaf Hair Salon</h1>
-      <nav class="hidden md:flex space-x-6">
-        <a href="index.html" class="hover:text-green-600">ホーム</a>
-        <a href="menu.html" class="hover:text-green-600">メニュー</a>
-        <a href="staff.html" class="text-green-600 font-semibold">スタッフ</a>
-        <a href="contact.html" class="hover:text-green-600">お問い合わせ</a>
-      </nav>
-    </div>
+<body>
+  <header class="header">
+    <h1 class="logo">Leaf Hair Salon</h1>
+    <nav class="nav">
+      <a href="index.html">トップ</a>
+      <a href="menu.html">メニュー</a>
+      <a href="staff.html">スタッフ</a>
+      <a href="contact.html">お問い合わせ</a>
+    </nav>
   </header>
 
-  <!-- メインビジュアル -->
-  <section class="h-96 bg-cover bg-center flex items-center justify-center text-white" style="background-image:url('https://picsum.photos/seed/staff/1600/900');">
-    <div class="bg-black bg-opacity-50 p-8 rounded-lg">
-      <h2 class="text-4xl font-bold">スタッフ紹介</h2>
-      <p class="mt-2">あなたの魅力を引き出すプロフェッショナルたち</p>
+  <section class="page-hero" style="background-image:url('img/staff_bg.jpg');">
+    <h2>スタッフ紹介</h2>
+  </section>
+
+  <section class="staff">
+    <div class="staff-member">
+      <img src="img/staff1.jpg" alt="スタイリストA">
+      <h3>スタイリストA</h3>
+      <p>柔らかい雰囲気の似合わせカットが得意です。</p>
+    </div>
+    <div class="staff-member">
+      <img src="img/staff2.jpg" alt="スタイリストB">
+      <h3>スタイリストB</h3>
+      <p>ナチュラル×モードなスタイルを提案します。</p>
     </div>
   </section>
 
-  <!-- スタッフ一覧 -->
-  <section class="py-20 bg-gray-50">
-    <div class="container mx-auto px-6 grid md:grid-cols-3 gap-10 text-center">
-      <div>
-        <img src="https://picsum.photos/seed/staff1/400/400" alt="スタイリストA" class="rounded-full mx-auto mb-4 shadow-lg">
-        <h3 class="text-lg font-semibold text-green-700">Aya Nakamura</h3>
-        <p class="text-gray-600 mt-2 text-sm">カットディレクター / 丁寧なヒアリングで理想のスタイルを実現。</p>
-      </div>
-      <div>
-        <img src="https://picsum.photos/seed/staff2/400/400" alt="スタイリストB" class="rounded-full mx-auto mb-4 shadow-lg">
-        <h3 class="text-lg font-semibold text-green-700">Yuki Tanaka</h3>
-        <p class="text-gray-600 mt-2 text-sm">カラーリスト / トレンド×似合わせのカラー提案。</p>
-      </div>
-      <div>
-        <img src="https://picsum.photos/seed/staff3/400/400" alt="スタイリストC" class="rounded-full mx-auto mb-4 shadow-lg">
-        <h3 class="text-lg font-semibold text-green-700">Mina Kobayashi</h3>
-        <p class="text-gray-600 mt-2 text-sm">スパニスト / 癒しのヘッドスパで極上のリラックスを。</p>
-      </div>
-    </div>
-  </section>
-
-  <footer class="bg-green-800 text-white py-6 text-center">
+  <footer class="footer">
     <p>&copy; 2025 Leaf Hair Salon</p>
   </footer>
 
+  <script>
+  const toggle = document.createElement('div');
+  toggle.className = 'menu-toggle';
+  toggle.innerHTML = '<span></span><span></span><span></span>';
+  document.querySelector('.header').prepend(toggle);
+
+  const nav = document.querySelector('.nav');
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+    toggle.classList.toggle('open');
+  });
+</script>
 </body>
 </html>

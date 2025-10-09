@@ -1,46 +1,254 @@
-/* =========================
-   Leaf Hair Salon 共通スタイル
-========================= */
-
-/* 全体 */
 body {
   font-family: 'Noto Sans JP', sans-serif;
-  scroll-behavior: smooth;
+  margin: 0;
+  color: #333;
+  background-color: #fff;
 }
 
-/* ナビゲーション */
-header nav a {
-  transition: color 0.3s ease;
-}
-header nav a:hover {
-  color: #059669; /* green-600 */
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  background: #fff;
+  border-bottom: 1px solid #eee;
 }
 
-/* メインビジュアル */
-section.bg-cover {
+.logo {
+  font-size: 1.5rem;
+  color: #3a5a40;
+  font-weight: 400;
+}
+
+.nav a {
+  margin-left: 1.5rem;
+  color: #333;
+  text-decoration: none;
+  font-weight: 300;
+}
+.nav a:hover {
+  color: #3a5a40;
+}
+
+/* Hero */
+.hero {
+  height: 90vh;
   background-size: cover;
   background-position: center;
+  position: relative;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.hero-overlay h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.btn {
+  background: #3a5a40;
+  color: #fff;
+  padding: 0.8rem 2rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.btn:hover {
+  background: #2f4c36;
 }
 
-/* レスポンシブヘッダー */
-@media (max-width: 768px) {
-  header nav {
-    display: none;
+/* Page hero */
+.page-hero {
+  height: 40vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.page-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+.page-hero h2 {
+  position: relative;
+  color: #fff;
+  font-size: 2rem;
+}
+
+/* About / Sections */
+.about, .menu-list, .staff, .contact {
+  padding: 4rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.about img {
+  width: 100%;
+  margin-top: 1.5rem;
+  border-radius: 8px;
+}
+
+/* Menu */
+.menu-list ul {
+  list-style: none;
+  padding: 0;
+}
+.menu-list li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dotted #ccc;
+  padding: 0.7rem 0;
+  font-size: 1.1rem;
+}
+
+/* Staff */
+.staff {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+.staff-member img {
+  width: 100%;
+  border-radius: 8px;
+}
+.staff-member h3 {
+  margin: 0.8rem 0 0.3rem;
+  color: #3a5a40;
+}
+
+/* Contact */
+.contact form {
+  display: flex;
+  flex-direction: column;
+}
+.contact label {
+  margin-top: 1rem;
+}
+.contact input, .contact textarea {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+}
+.contact button {
+  margin-top: 1.5rem;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background: #f5f5f5;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+/* =========================
+   📱 Responsive Design
+   ========================= */
+
+/* タブレット以下 */
+@media (max-width: 1024px) {
+  .header {
+    padding: 1rem 1.5rem;
+  }
+  .nav a {
+    margin-left: 1rem;
+    font-size: 0.95rem;
+  }
+  .hero-overlay h2 {
+    font-size: 1.8rem;
+  }
+  .about, .menu-list, .staff, .contact {
+    padding: 3rem 1.5rem;
   }
 }
 
-/* フッター */
-footer {
-  font-size: 0.9rem;
-  letter-spacing: 0.05em;
+/* スマホ（ハンバーガーメニュー導入） */
+@media (max-width: 768px) {
+  /* ナビゲーション非表示（デフォルト） */
+  .nav {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    border-top: 1px solid #eee;
+  }
+  .nav.active {
+    display: flex;
+  }
+
+  /* ヘッダー配置 */
+  .header {
+    position: relative;
+  }
+
+  /* ハンバーガーアイコン */
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+  }
+  .menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #3a5a40;
+    transition: 0.3s;
+  }
+
+  /* ロゴ中央寄せ */
+  .header {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Hero */
+  .hero-overlay h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0 1rem;
+  }
+
+  /* 各セクション */
+  .about, .menu-list, .staff, .contact {
+    padding: 2rem 1rem;
+  }
+
+  /* スタッフカード */
+  .staff {
+    grid-template-columns: 1fr;
+  }
+
+  /* メニュー */
+  .menu-list li {
+    font-size: 1rem;
+  }
 }
 
-/* フォーム */
-form input, form textarea {
-  outline: none;
-  transition: border 0.3s ease, box-shadow 0.3s ease;
-}
-form input:focus, form textarea:focus {
-  border-color: #34d399;
-  box-shadow: 0 0 0 2px rgba(52, 211, 153, 0.3);
+/* スマホ小画面（iPhone SEなど） */
+@media (max-width: 480px) {
+  .hero-overlay h2 {
+    font-size: 1.2rem;
+  }
+  .btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  .logo {
+    font-size: 1.2rem;
+  }
 }

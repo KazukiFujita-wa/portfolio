@@ -4,57 +4,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>メニュー | Leaf Hair Salon</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
 </head>
-<body class="text-gray-800 font-sans">
-
-  <!-- ヘッダー -->
-  <header class="fixed w-full bg-white shadow-sm z-50">
-    <div class="container mx-auto flex justify-between items-center p-4">
-      <h1 class="text-2xl font-bold text-green-700">Leaf Hair Salon</h1>
-      <nav class="hidden md:flex space-x-6">
-        <a href="index.html" class="hover:text-green-600">ホーム</a>
-        <a href="menu.html" class="text-green-600 font-semibold">メニュー</a>
-        <a href="staff.html" class="hover:text-green-600">スタッフ</a>
-        <a href="contact.html" class="hover:text-green-600">お問い合わせ</a>
-      </nav>
-    </div>
+<body>
+  <header class="header">
+    <h1 class="logo">Leaf Hair Salon</h1>
+    <nav class="nav">
+      <a href="index.html">トップ</a>
+      <a href="menu.html">メニュー</a>
+      <a href="staff.html">スタッフ</a>
+      <a href="contact.html">お問い合わせ</a>
+    </nav>
   </header>
 
-  <!-- メインビジュアル -->
-  <section class="h-96 bg-cover bg-center flex items-center justify-center text-white" style="background-image:url('https://picsum.photos/seed/menu/1600/900');">
-    <div class="bg-black bg-opacity-50 p-8 rounded-lg">
-      <h2 class="text-4xl font-bold">メニュー</h2>
-      <p class="mt-2">あなたに似合うスタイルをご提案します</p>
-    </div>
+  <section class="page-hero" style="background-image:url('img/menu_bg.jpg');">
+    <h2>メニュー</h2>
   </section>
 
-  <!-- メニュー一覧 -->
-  <section class="py-16 bg-gray-50">
-    <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12">
-      <div class="flex flex-col justify-center">
-        <h3 class="text-2xl font-bold text-green-700 mb-4">カット</h3>
-        <p class="text-gray-700 mb-4">一人ひとりの骨格・髪質に合わせたカットを行い、自然な美しさを引き出します。</p>
-        <p class="font-semibold">¥5,500（税込）</p>
-      </div>
-      <img src="https://picsum.photos/seed/cut/800/600" alt="カット" class="rounded-lg shadow-lg">
-    </div>
-
-    <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 mt-16 md:flex-row-reverse">
-      <img src="https://picsum.photos/seed/color/800/600" alt="カラー" class="rounded-lg shadow-lg md:order-1">
-      <div class="flex flex-col justify-center md:order-2">
-        <h3 class="text-2xl font-bold text-green-700 mb-4">カラー</h3>
-        <p class="text-gray-700 mb-4">髪に優しいオーガニックカラーで、艶やかな仕上がりに。</p>
-        <p class="font-semibold">¥7,000〜（税込）</p>
-      </div>
-    </div>
+  <section class="menu-list">
+    <ul>
+      <li><span>カット</span><span>・・・・・・￥5,400</span></li>
+      <li><span>カラー</span><span>・・・・・・￥7,800</span></li>
+      <li><span>パーマ</span><span>・・・・・・￥8,600</span></li>
+      <li><span>トリートメント</span><span>・・・・・・￥4,200</span></li>
+      <li><span>ヘッドスパ</span><span>・・・・・・￥3,500</span></li>
+    </ul>
   </section>
 
-  <!-- フッター -->
-  <footer class="bg-green-800 text-white py-6 text-center">
+  <footer class="footer">
     <p>&copy; 2025 Leaf Hair Salon</p>
   </footer>
 
+  <script>
+  const toggle = document.createElement('div');
+  toggle.className = 'menu-toggle';
+  toggle.innerHTML = '<span></span><span></span><span></span>';
+  document.querySelector('.header').prepend(toggle);
+
+  const nav = document.querySelector('.nav');
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+    toggle.classList.toggle('open');
+  });
+</script>
 </body>
 </html>

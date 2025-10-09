@@ -3,46 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leaf Hair Salon | 自然体で美しく</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <title>Leaf Hair Salon | 自然体で輝くあなたへ</title>
   <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
 </head>
-<body class="text-gray-800 font-sans">
-
-  <!-- ヘッダー -->
-  <header class="fixed w-full bg-white shadow-sm z-50">
-    <div class="container mx-auto flex justify-between items-center p-4">
-      <h1 class="text-2xl font-bold text-green-700">Leaf Hair Salon</h1>
-      <nav class="hidden md:flex space-x-6">
-        <a href="index.html" class="hover:text-green-600">ホーム</a>
-        <a href="menu.html" class="hover:text-green-600">メニュー</a>
-        <a href="staff.html" class="hover:text-green-600">スタッフ</a>
-        <a href="contact.html" class="hover:text-green-600">お問い合わせ</a>
-      </nav>
-    </div>
+<body>
+  <header class="header">
+    <h1 class="logo">Leaf Hair Salon</h1>
+    <nav class="nav">
+      <a href="index.html">トップ</a>
+      <a href="menu.html">メニュー</a>
+      <a href="staff.html">スタッフ</a>
+      <a href="contact.html">お問い合わせ</a>
+    </nav>
   </header>
 
-  <!-- メインビジュアル -->
-  <section class="h-screen bg-cover bg-center flex items-center justify-center relative" style="background-image:url('https://picsum.photos/seed/salon1/1600/900');">
-    <div class="bg-white bg-opacity-70 p-10 rounded-lg text-center">
-      <h2 class="text-4xl font-bold mb-4 text-green-700">自然体で、美しく。</h2>
-      <p class="text-gray-600 mb-6">Leafはナチュラルな美しさを大切にするカットサロンです。</p>
-      <a href="contact.html" class="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">予約する</a>
+  <section class="hero" style="background-image:url('img/salon_main.jpg');">
+    <div class="hero-overlay">
+      <h2>自然体で輝くあなたへ</h2>
+      <a href="contact.html" class="btn">ご予約はこちら</a>
     </div>
   </section>
 
-  <!-- コンセプト -->
-  <section class="py-20 bg-gray-50">
-    <div class="container mx-auto text-center px-6">
-      <h3 class="text-2xl font-semibold mb-6 text-green-700">あなたの“自然な美しさ”を引き出す</h3>
-      <p class="max-w-2xl mx-auto text-gray-700">Leafでは、髪質や骨格に合わせた丁寧なカットと、落ち着いた空間でのリラックスタイムをご提供します。忙しい毎日に、ひとときの癒しを。</p>
-    </div>
+  <section class="about">
+    <h2>Leafのこだわり</h2>
+    <p>Leafは「自然体で美しく」をテーマにしたカットサロン。白と緑を基調とした落ち着いた空間で、あなたらしいスタイルを提案します。</p>
+    <img src="img/interior.jpg" alt="サロン内観">
   </section>
 
-  <!-- フッター -->
-  <footer class="bg-green-800 text-white py-6 text-center">
+  <footer class="footer">
     <p>&copy; 2025 Leaf Hair Salon</p>
   </footer>
 
+  <script>
+  const toggle = document.createElement('div');
+  toggle.className = 'menu-toggle';
+  toggle.innerHTML = '<span></span><span></span><span></span>';
+  document.querySelector('.header').prepend(toggle);
+
+  const nav = document.querySelector('.nav');
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+    toggle.classList.toggle('open');
+  });
+</script>
 </body>
 </html>
