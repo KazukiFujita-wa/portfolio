@@ -3,55 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>サービス | HumanLink Inc.</title>
+  <title>サービス紹介 | HumanLink Inc.</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="text-gray-800">
+<body class="text-gray-800 bg-gray-50">
 
+  <!-- ヘッダー読込 -->
   <div data-include="partials/header.html"></div>
 
   <!-- メインビジュアル -->
-  <section class="h-96 flex items-center justify-center bg-green-700 text-white">
-    <div data-aos="fade-up">
-      <h2 class="text-4xl font-bold mb-3">サービス</h2>
-      <p class="text-lg">HumanLinkが提供する多様な人材サービスをご紹介します。</p>
+  <section class="h-64 flex items-center justify-center bg-cover bg-center text-white" style="background-image:url('img/service-hero.jpg');">
+    <h2 class="text-4xl font-bold bg-black bg-opacity-50 px-6 py-3 rounded-lg" data-aos="fade-up">サービス紹介</h2>
+  </section>
+
+  <!-- サービス紹介 -->
+  <section class="py-16">
+    <div class="container mx-auto px-6 space-y-24">
+
+      <!-- サービス① -->
+      <div class="flex flex-col md:flex-row items-center gap-8" data-aos="fade-right">
+        <div class="md:w-1/2">
+          <h3 class="text-2xl font-bold mb-4 text-green-600">人材紹介サービス</h3>
+          <p class="text-gray-700 leading-relaxed">
+            即戦力人材を求める企業様と、次のキャリアを探す求職者様をマッチング。<br>
+            業界に精通したコンサルタントが最適な人材採用を支援します。
+          </p>
+        </div>
+        <div class="md:w-1/2" data-aos="fade-left">
+          <img src="images/recruit.jpg" alt="人材紹介サービス" class="rounded-xl shadow-lg w-full">
+        </div>
+      </div>
+
+      <!-- サービス② -->
+      <div class="flex flex-col md:flex-row-reverse items-center gap-8" data-aos="fade-left">
+        <div class="md:w-1/2">
+          <h3 class="text-2xl font-bold mb-4 text-green-600">キャリア支援サービス</h3>
+          <p class="text-gray-700 leading-relaxed">
+            転職希望者のキャリア形成を一人ひとりに寄り添って支援します。<br>
+            履歴書添削、面接対策、求人紹介などトータルでサポートします。
+          </p>
+        </div>
+        <div class="md:w-1/2" data-aos="fade-right">
+          <img src="images/careersupport.jpg" alt="キャリア支援サービス" class="rounded-xl shadow-lg w-full">
+        </div>
+      </div>
+
+      <!-- サービス③ -->
+      <div class="flex flex-col md:flex-row items-center gap-8" data-aos="fade-right">
+        <div class="md:w-1/2">
+          <h3 class="text-2xl font-bold mb-4 text-green-600">採用コンサルティング</h3>
+          <p class="text-gray-700 leading-relaxed">
+            採用戦略の設計から面接プロセス改善、採用広報までを一貫して支援。<br>
+            企業の成長ステージに合わせた最適な採用活動を提案します。
+          </p>
+        </div>
+        <div class="md:w-1/2" data-aos="fade-left">
+          <img src="images/consulting.jpg" alt="採用コンサルティング" class="rounded-xl shadow-lg w-full">
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- 各サービス -->
-  <section class="py-16 bg-gray-50">
-    <div class="container mx-auto px-6 space-y-16">
-
-      <div class="service-hero service-hero-1 rounded-xl p-10 text-white" data-aos="fade-up">
-        <div class="bg-overlay p-8 rounded-lg text-gray-800">
-          <h3 class="text-2xl font-bold mb-3">人材紹介</h3>
-          <p>成長企業への即戦力人材の採用支援を行います。</p>
-        </div>
-      </div>
-
-      <div class="service-hero service-hero-2 rounded-xl p-10 text-white" data-aos="fade-up" data-aos-delay="100">
-        <div class="bg-overlay p-8 rounded-lg text-gray-800">
-          <h3 class="text-2xl font-bold mb-3">キャリア支援</h3>
-          <p>転職希望者のキャリアを共に設計し、最適な道を導きます。</p>
-        </div>
-      </div>
-
-      <div class="service-hero service-hero-3 rounded-xl p-10 text-white" data-aos="fade-up" data-aos-delay="200">
-        <div class="bg-overlay p-8 rounded-lg text-gray-800">
-          <h3 class="text-2xl font-bold mb-3">採用コンサルティング</h3>
-          <p>企業の採用課題を解決する戦略立案・実行をサポートします。</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
+  <!-- フッター読込 -->
   <div data-include="partials/footer.html"></div>
 
+  <!-- JS読込 -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="js/include.js"></script>
-  <script>AOS.init({ duration: 1000 });</script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
 </body>
 </html>
