@@ -252,3 +252,75 @@ body {
     font-size: 1.2rem;
   }
 }
+
+/* ====== header / mobile nav z-index 調整 ====== */
+
+/* ヘッダーを常に最前面に */
+.header {
+  position: fixed; /* 既に fixed の場合はこの行はOK */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000; /* 十分に高く */
+}
+
+/* ハンバーガー表示（スマホ） */
+.menu-toggle {
+  display: none; /* デスクトップは非表示 */
+  z-index: 10010; /* ヘッダーより上に表示 */
+}
+
+/* 個別のバー */
+.menu-toggle span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: #3a5a40;
+  transition: 0.3s;
+}
+
+/* モバイル時に表示 */
+@media (max-width: 768px) {
+  .menu-toggle { display:block; }
+
+  /* ナビはヘッダー直下に置く（ヘッダー内に置いてもOK） */
+  .nav {
+    display: none;
+    position: absolute;
+    top: 100%; /* ヘッダーの下に表示 */
+    right: 0;
+    left: 0;
+    background: #fff;
+    border-top: 1px solid #eee;
+    z-index: 10005; /* ヘッダーよりやや上 */
+    flex-direction: column;
+    padding: 1rem;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  }
+  .nav.active {
+    display: flex;
+  }
+
+  /* nav内リンクをタップしやすく */
+  .nav a {
+    padding: 0.75rem 0;
+    display: block;
+    width: 100%;
+  }
+}
+
+/* Hero等がヘッダーより前に来てしまう場合は hero の z-index を下げる */
+.hero, .page-hero {
+  z-index: 0; /* ヘッダーより下 */
+  position: relative; /* 既に absolute 等なら注意 */
+}
+
+/* 万が一 hero-overlay が pointer-events を持っている場合は無効化（必要なら） */
+.hero-overlay {
+  pointer-events: none; /* hero 上のテキストはクリック不可にしたくなければ調整 */
+}
+/* ただし hero 内のボタン等をクリック可能にするには、ボタンに pointer-events: auto を付ける */
+.hero-overlay .btn {
+  pointer-events: auto;
+}
