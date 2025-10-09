@@ -1,46 +1,197 @@
-/* =========================
-   Leaf Hair Salon 共通スタイル
-========================= */
-
-/* 全体 */
+/* ===============================
+   ベース設定
+   =============================== */
 body {
-  font-family: 'Noto Sans JP', sans-serif;
-  scroll-behavior: smooth;
+  font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
 }
 
-/* ナビゲーション */
-header nav a {
-  transition: color 0.3s ease;
-}
-header nav a:hover {
-  color: #059669; /* green-600 */
+img {
+  max-width: 100%;
+  height: auto;
 }
 
-/* メインビジュアル */
-section.bg-cover {
-  background-size: cover;
-  background-position: center;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-/* レスポンシブヘッダー */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ===============================
+   ヘッダー
+   =============================== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  padding: 0 1.5rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2a5a3d;
+}
+
+/* ===============================
+   ナビゲーション
+   =============================== */
+.nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav a {
+  color: #333;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav a:hover {
+  color: #2a5a3d;
+}
+
+/* ===============================
+   ハンバーガーメニュー
+   =============================== */
+.toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  width: 30px;
+  height: 25px;
+}
+
+.toggle span {
+  background: #333;
+  height: 3px;
+  width: 100%;
+  margin: 4px 0;
+  transition: all 0.4s ease;
+}
+
+/* 開閉時のアニメーション */
+.toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+.toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* ===============================
+   モバイル対応
+   =============================== */
 @media (max-width: 768px) {
-  header nav {
+  .toggle {
+    display: flex;
+  }
+
+  .nav {
     display: none;
+    position: absolute;
+    top: 100%; /* 通常時はヘッダーの下 */
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding: 1.5rem 0;
+    z-index: 1005;
+    transition: top 0.3s ease, opacity 0.3s ease;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  }
+
+  .nav.active {
+    display: flex;
+    top: 0; /* メニューを上にスライド表示 */
+  }
+
+  .nav a {
+    padding: 0.75rem 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+
+  /* メニュー開閉時にヘッダーも変化 */
+  .header.menu-open {
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   }
 }
 
-/* フッター */
-footer {
-  font-size: 0.9rem;
-  letter-spacing: 0.05em;
+/* ===============================
+   Heroセクション（例）
+   =============================== */
+.hero {
+  height: 100vh;
+  background: url('https://placehold.co/1600x900?text=Salon+Hero') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  position: relative;
 }
 
-/* フォーム */
-form input, form textarea {
-  outline: none;
-  transition: border 0.3s ease, box-shadow 0.3s ease;
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
 }
-form input:focus, form textarea:focus {
-  border-color: #34d399;
-  box-shadow: 0 0 0 2px rgba(52, 211, 153, 0.3);
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  z-index: 2;
+}
+
+/* ===============================
+   共通セクション
+   =============================== */
+section {
+  padding: 80px 0;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+footer {
+  text-align: center;
+  background: #2a5a3d;
+  color: #fff;
+  padding: 2rem;
+  font-size: 0.9rem;
 }
