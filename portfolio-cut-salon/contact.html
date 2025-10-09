@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ | Leaf Hair Salon</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="text-gray-800 font-sans">
+
+  <!-- ヘッダー -->
+  <header class="fixed w-full bg-white shadow-sm z-50">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <h1 class="text-2xl font-bold text-green-700">Leaf Hair Salon</h1>
+      <nav class="hidden md:flex space-x-6">
+        <a href="index.html" class="hover:text-green-600">ホーム</a>
+        <a href="menu.html" class="hover:text-green-600">メニュー</a>
+        <a href="staff.html" class="hover:text-green-600">スタッフ</a>
+        <a href="contact.html" class="text-green-600 font-semibold">お問い合わせ</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- メインビジュアル -->
+  <section class="h-96 bg-cover bg-center flex items-center justify-center text-white" style="background-image:url('https://picsum.photos/seed/contact/1600/900');">
+    <div class="bg-black bg-opacity-50 p-8 rounded-lg">
+      <h2 class="text-4xl font-bold">お問い合わせ</h2>
+      <p class="mt-2">ご予約・ご相談はこちらから</p>
+    </div>
+  </section>
+
+  <!-- フォーム -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6 max-w-lg">
+      <form class="bg-white p-8 rounded-lg shadow-md space-y-4">
+        <div>
+          <label class="block text-sm font-semibold mb-2">お名前</label>
+          <input type="text" class="w-full border border-gray-300 rounded p-2 focus:ring-2 focus:ring-green-400" placeholder="例）山田 花子">
+        </div>
+        <div>
+          <label class="block text-sm font-semibold mb-2">メールアドレス</label>
+          <input type="email" class="w-full border border-gray-300 rounded p-2 focus:ring-2 focus:ring-green-400" placeholder="example@mail.com">
+        </div>
+        <div>
+          <label class="block text-sm font-semibold mb-2">お問い合わせ内容</label>
+          <textarea rows="5" class="w-full border border-gray-300 rounded p-2 focus:ring-2 focus:ring-green-400" placeholder="お問い合わせ内容を入力してください"></textarea>
+        </div>
+        <button type="submit" class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition">送信する</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="bg-green-800 text-white py-6 text-center">
+    <p>&copy; 2025 Leaf Hair Salon</p>
+  </footer>
+
+</body>
+</html>

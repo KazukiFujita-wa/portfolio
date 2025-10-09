@@ -1,0 +1,46 @@
+/* =========================
+   Leaf Hair Salon 共通スタイル
+========================= */
+
+/* 全体 */
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* ナビゲーション */
+header nav a {
+  transition: color 0.3s ease;
+}
+header nav a:hover {
+  color: #059669; /* green-600 */
+}
+
+/* メインビジュアル */
+section.bg-cover {
+  background-size: cover;
+  background-position: center;
+}
+
+/* レスポンシブヘッダー */
+@media (max-width: 768px) {
+  header nav {
+    display: none;
+  }
+}
+
+/* フッター */
+footer {
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+}
+
+/* フォーム */
+form input, form textarea {
+  outline: none;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+form input:focus, form textarea:focus {
+  border-color: #34d399;
+  box-shadow: 0 0 0 2px rgba(52, 211, 153, 0.3);
+}
