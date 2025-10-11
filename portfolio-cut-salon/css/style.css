@@ -281,3 +281,33 @@ body {
     border-top: 1px solid #eee;
   }
 }
+
+/* =========================
+   🧱 ハンバーガー表示制御追加
+   ========================= */
+
+/* PCでは非表示 */
+.menu-toggle {
+  display: none;
+}
+
+/* スマホで表示 */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    z-index: 1001;
+  }
+
+  /* ナビより前面に出す */
+  .header {
+    position: relative;
+    z-index: 1000;
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #fff;
+  }
+}
