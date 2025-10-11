@@ -8,15 +8,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="header">
-    <h1 class="logo">Leaf Hair Salon</h1>
-    <nav class="nav">
-      <a href="index.html">トップ</a>
-      <a href="menu.html">メニュー</a>
-      <a href="staff.html">スタッフ</a>
-      <a href="contact.html">お問い合わせ</a>
-    </nav>
-  </header>
+
+  <div data-include="partials/header.html"></div>
 
   <section class="hero" style="background-image:url('images/50redsugar720.jpg');">
     <div class="hero-overlay">
@@ -37,21 +30,10 @@
     </div>
   </section>
 
-  <footer class="footer">
-    <p>&copy; 2025 Leaf Hair Salon</p>
-  </footer>
+  <div data-include="partials/footer.html"></div>
 
-  <script>
-    const toggle = document.createElement('div');
-    toggle.className = 'menu-toggle';
-    toggle.innerHTML = '<span></span><span></span><span></span>';
-    document.querySelector('.header').prepend(toggle);
-
-    const nav = document.querySelector('.nav');
-    toggle.addEventListener('click', () => {
-      nav.classList.toggle('active');
-      toggle.classList.toggle('open');
-    });
-  </script>
+  <!-- JS -->
+  <script src="js/menu.js"></script>
+  <script src="js/include.js"></script>
 </body>
 </html>
