@@ -41,10 +41,17 @@
     <p>&copy; 2025 Leaf Hair Salon</p>
   </footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="js/include.js"></script>
   <script>
-    AOS.init({ duration: 1000 });
+    const toggle = document.createElement('div');
+    toggle.className = 'menu-toggle';
+    toggle.innerHTML = '<span></span><span></span><span></span>';
+    document.querySelector('.header').prepend(toggle);
+
+    const nav = document.querySelector('.nav');
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+      toggle.classList.toggle('open');
+    });
   </script>
 </body>
 </html>
