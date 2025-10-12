@@ -17,8 +17,6 @@ searchBtn.addEventListener("click", async () => {
     const geoUrl = `https://api.opencagedata.com/geocode/v1/json?q=${encodeURIComponent(city)}&key=${OPEN_CAGE_API_KEY}&language=ja&pretty=1`;
     const geoRes = await fetch(geoUrl);
     const geoData = await geoRes.json();
-
-    console.log(weatherData);
     
     if (!geoData.results || geoData.results.length === 0) {
       throw new Error("位置情報が見つかりません。");
