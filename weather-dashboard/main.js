@@ -59,27 +59,6 @@ function displayWeather(city, data) {
   document.getElementById("weatherIcon").src = iconUrl;
 }
 
-// function displayWeather(city, data) {
-//   errorMessage.classList.add("hidden");
-//   weatherResult.classList.remove("hidden");
-
-//   const current = data.current;
-//   document.getElementById("cityName").textContent = city;
-//   document.getElementById("temp").textContent = Math.round(current.temperature);
-//   document.getElementById("wind").textContent = current.windspeed;
-
-//   // Open-Meteo の humidity は hourly にあるので一部取得
-//   const humidity = data.hourly?.relativehumidity_2m?.[0] || "-";
-//   document.getElementById("humidity").textContent = humidity;
-
-//   // const weatherIcon = document.getElementById("weatherIcon");
-//   // weatherIcon.src = "https://openweathermap.org/img/wn/01d@2x.png"; // 仮アイコン
-
-//     // 🌦 weathercode に応じてアイコンを設定
-//   const iconUrl = getWeatherIcon(current.weathercode);
-//   document.getElementById("weatherIcon").src = iconUrl;
-// }
-
 // 天気コード → アイコンURLを返却する
 function getWeatherIcon(code) {
   if (code === 0) return "https://openweathermap.org/img/wn/01d@2x.png"; // 快晴
