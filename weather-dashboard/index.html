@@ -3,35 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>天気ダッシュボード</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Weather Dashboard | 天気ダッシュボード</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+  <!-- ===== ヘッダー ===== -->
   <header class="header">
-    <h1>天気ダッシュボード</h1>
+    <h1>Weather Dashboard</h1>
   </header>
 
-  <main class="main">
-    <div class="search">
-      <input type="text" id="cityInput" placeholder="都市名を入力（例: 東京）">
-      <button id="searchBtn">検索</button>
+  <!-- ===== 検索エリア ===== -->
+  <section class="search">
+    <input type="text" id="cityInput" placeholder="都市名を入力（例：Tokyo）">
+    <button id="searchBtn">検索</button>
+  </section>
+
+  <!-- ===== 結果表示エリア ===== -->
+  <section id="weatherResult" class="result hidden">
+    <div class="weather-card">
+      <img id="weatherIcon" src="img/weather-placeholder.png" alt="天気アイコン">
+      <h2 id="cityName">Tokyo</h2>
+      <p id="description">晴れ</p>
+      <p><span id="temp">22</span>°C</p>
+      <p>湿度: <span id="humidity">60</span>%</p>
+      <p>風速: <span id="wind">3.5</span> m/s</p>
     </div>
+  </section>
 
-    <div id="errorMessage" class="error hidden"></div>
+  <!-- ===== エラーメッセージ ===== -->
+  <p id="errorMessage" class="error hidden"></p>
 
-    <div id="weatherResult" class="weather-card hidden">
-      <h2 id="cityName"></h2>
-      <img id="weatherIcon" src="" alt="天気アイコン">
-      <p><span id="temp"></span>°C</p>
-      <p>風速: <span id="wind"></span> m/s</p>
-      <p>湿度: <span id="humidity"></span>%</p>
-    </div>
-  </main>
-
+  <!-- ===== フッター ===== -->
   <footer class="footer">
-    <p>Powered by Open-Meteo & OpenCage</p>
+    <p>Powered by <a href="https://openweathermap.org/" target="_blank">OpenWeatherMap</a></p>
   </footer>
 
-  <script src="main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
