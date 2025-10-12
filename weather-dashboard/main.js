@@ -30,7 +30,7 @@ searchBtn.addEventListener("click", async () => {
     const weatherRes = await fetch(weatherUrl);
     const weatherData = await weatherRes.json();
 
-    if (!weatherData.current_weather) {
+    if (!weatherData.current) {
       throw new Error("天気情報を取得できません。");
     }
 
@@ -44,22 +44,41 @@ function displayWeather(city, data) {
   errorMessage.classList.add("hidden");
   weatherResult.classList.remove("hidden");
 
-  const current = data.current_weather;
+  const current = data.current;
+  if (!current) {
+    showError("天気データが見つかりません。");
+    return;
+  }
+
   document.getElementById("cityName").textContent = city;
-  document.getElementById("temp").textContent = Math.round(current.temperature);
-  document.getElementById("wind").textContent = current.windspeed;
+  document.getElementById("temp").textContent = Math.round(current.temperature_2m);
+  document.getElementById("wind").textContent = current.wind_speed_10m;
+  document.getElementById("humidity").textContent = current.relative_humidity_2m;
 
-  // Open-Meteo の humidity は hourly にあるので一部取得
-  const humidity = data.hourly?.relativehumidity_2m?.[0] || "-";
-  document.getElementById("humidity").textContent = humidity;
-
-  // const weatherIcon = document.getElementById("weatherIcon");
-  // weatherIcon.src = "https://openweathermap.org/img/wn/01d@2x.png"; // 仮アイコン
-
-    // 🌦 weathercode に応じてアイコンを設定
-  const iconUrl = getWeatherIcon(current.weathercode);
+  const iconUrl = getWeatherIcon(current.weather_code);
   document.getElementById("weatherIcon").src = iconUrl;
 }
+
+// function displayWeather(city, data) {
+//   errorMessage.classList.add("hidden");
+//   weatherResult.classList.remove("hidden");
+
+//   const current = data.current;
+//   document.getElementById("cityName").textContent = city;
+//   document.getElementById("temp").textContent = Math.round(current.temperature);
+//   document.getElementById("wind").textContent = current.windspeed;
+
+//   // Open-Meteo の humidity は hourly にあるので一部取得
+//   const humidity = data.hourly?.relativehumidity_2m?.[0] || "-";
+//   document.getElementById("humidity").textContent = humidity;
+
+//   // const weatherIcon = document.getElementById("weatherIcon");
+//   // weatherIcon.src = "https://openweathermap.org/img/wn/01d@2x.png"; // 仮アイコン
+
+//     // 🌦 weathercode に応じてアイコンを設定
+//   const iconUrl = getWeatherIcon(current.weathercode);
+//   document.getElementById("weatherIcon").src = iconUrl;
+// }
 
 // 天気コード → アイコンURLを返却する
 function getWeatherIcon(code) {
