@@ -18,6 +18,8 @@ searchBtn.addEventListener("click", async () => {
     const geoRes = await fetch(geoUrl);
     const geoData = await geoRes.json();
 
+    console.log(weatherData);
+    
     if (!geoData.results || geoData.results.length === 0) {
       throw new Error("位置情報が見つかりません。");
     }
