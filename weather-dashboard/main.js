@@ -26,7 +26,7 @@ searchBtn.addEventListener("click", async () => {
 
     // ② 緯度経度から天気を取得（Open-Meteo）
     // 例：天気取得 URL に “jma” モデルオプションを入れる
-    const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&models=jma&current_weather=true&hourly=relativehumidity_2m`;
+    const weatherUrl = `https://api.open-meteo.com/v1/jma?latitude=${lat}&longitude=${lng}&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m`;
     const weatherRes = await fetch(weatherUrl);
     const weatherData = await weatherRes.json();
 
