@@ -83,11 +83,14 @@ function displayWeather(city, data) {
 // 天気コード → アイコンURLを返却する
 function getWeatherIcon(code) {
   if (code === 0) return "https://openweathermap.org/img/wn/01d@2x.png"; // 快晴
-  if (code <= 3) return "https://openweathermap.org/img/wn/02d@2x.png"; // 晴れ・一部曇り
+  if (code === 1) return "https://openweathermap.org/img/wn/02d@2x.png"; // 晴れ
+  if (code === 2) return "https://openweathermap.org/img/wn/03d@2x.png"; // 曇りがち
+  if (code === 3) return "https://openweathermap.org/img/wn/04d@2x.png"; // 曇り
   if (code >= 45 && code <= 48) return "https://openweathermap.org/img/wn/50d@2x.png"; // 霧
   if (code >= 51 && code <= 67) return "https://openweathermap.org/img/wn/09d@2x.png"; // 小雨〜雨
   if (code >= 71 && code <= 77) return "https://openweathermap.org/img/wn/13d@2x.png"; // 雪
   if (code >= 80 && code <= 82) return "https://openweathermap.org/img/wn/10d@2x.png"; // にわか雨
+  if (code >= 85 && code <= 86) return "https://openweathermap.org/img/wn/13d@2x.png"; // にわか雪
   if (code >= 95 && code <= 99) return "https://openweathermap.org/img/wn/11d@2x.png"; // 雷雨
   return "https://openweathermap.org/img/wn/01d@2x.png"; // デフォルト晴れ
 }
