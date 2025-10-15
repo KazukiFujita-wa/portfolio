@@ -1,110 +1,77 @@
+<!-- index.html（置き換え用） -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>ホーム - ポートフォリオ</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kazuki Fujita — ポートフォリオ / IT伴走パートナー</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>ようこそ！</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">ホーム</a></li>
-        <li><a href="portfolio.html">ポートフォリオ</a></li>
-        <li><a href="about.html">自己紹介</a></li>
-        <li><a href="contact.html">連絡</a></li>
-      </ul>
-    </nav>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">Kazuki Fujita</a>
+      <nav class="nav">
+        <a href="index.html">ホーム</a>
+        <a href="portfolio.html">ポートフォリオ</a>
+        <a href="about.html">自己紹介</a>
+        <a href="contact.html">連絡</a>
+      </nav>
+    </div>
   </header>
-  <main>
-    <h2>このサイトについて</h2>
-    <div class="container">
-  <div class="card">
-    <h2>North</h2>
-    <i class="fas fa-arrow-right"></i>
-    <p>a lonely trip.</p>
-    <div class="pic"></div>
-    <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-    <div class="social">
-      <i class="fab fa-facebook-f"></i>
-      <i class="fab fa-twitter"></i>
-      <i class="fab fa-instagram"></i>
-      <i class="fab fa-github"></i>
-    </div>
-    <button>
-    </button>
-  </div>
-    <div class="card card2">
-    <h2>Vauxhall</h2>
-    <i class="fas fa-arrow-right"></i>
-    <p>a lonely trip.</p>
-    <div class="pic"></div>
-    <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-    <div class="social">
-      <i class="fab fa-facebook-f"></i>
-      <i class="fab fa-twitter"></i>
-      <i class="fab fa-instagram"></i>
-      <i class="fab fa-github"></i>
-    </div>
-    <button>
-    </button>
-  </div>
-</div>
 
-<a href="https://dribbble.com/YancyMin" class="dr-url" target="_blank"><img class="dr" src="https://cdn.dribbble.com/assets/logo-footer-hd-a05db77841b4b27c0bf23ec1378e97c988190dfe7d26e32e1faea7269f9e001b.png" alt=""></a>
-    <p>こちらは私のポートフォリオサイトです。</p>
+  <main class="container" style="padding-top:90px;">
+    <!-- ヒーロー -->
+    <section class="hero" style="margin-bottom:2rem;">
+      <h1 class="hero-title">中立で包容力のある IT 伴走パートナー</h1>
+      <p class="hero-lead">業務改善と開発の橋渡しをし、要件 → 実装 → 運用まで伴走します。</p>
+      <p><a class="btn" href="portfolio.html">制作実績を見る</a> <a class="btn outline" href="about.html">詳しいプロフィール</a></p>
+    </section>
+
+    <!-- 主な提供サービス / キーハイライト -->
+    <section class="highlights" style="margin:2rem 0;">
+      <h2>できること</h2>
+      <ul class="highlist">
+        <li>Laravel / PHPでのWebアプリ開発（家庭菜園アプリ等）</li>
+        <li>フロントエンド（HTML/CSS/JS）と静的デプロイ（Cloudflare Pages等）</li>
+        <li>業務改善・経理系の自動化設計・実装支援</li>
+      </ul>
+    </section>
+
+    <!-- 代表作（抜粋）-->
+    <section class="works" style="margin:2rem 0;">
+      <h2>代表作（抜粋）</h2>
+
+      <article class="work">
+        <h3>人材系企業サイト</h3>
+        <p>静的サイトとしてデザイン〜実装。企業イメージに合わせたレスポンシブ対応。</p>
+        <p><a href="/portfolio-site/index.html">デモを見る</a></p>
+      </article>
+
+      <article class="work">
+        <h3>カットサロンサイト</h3>
+        <p>20〜30代女性向けのUI/UX設計・レスポンシブ実装。</p>
+        <p><a href="/portfolio-cut-salon/index.html">デモを見る</a></p>
+      </article>
+
+      <article class="work">
+        <h3>家庭菜園収支管理アプリ（開発中）</h3>
+        <p>Laravel / Docker 開発環境で構築中。収支の可視化・レポート機能を予定。</p>
+      </article>
+    </section>
+
+    <!-- CTA / 連絡 -->
+    <section class="contact-cta" style="margin:2rem 0; text-align:center;">
+      <p>案件のご相談や共同開発のご相談はお気軽にどうぞ</p>
+      <p><a class="btn" href="mailto:mentaianko@gmail.com">メールで相談する</a></p>
+    </section>
   </main>
-  <footer>
-    &copy; 2025 Kazuki Fujita
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Kazuki Fujita</p>
+      <p><a href="https://github.com/KazukiFujita-wa">GitHub</a> · <a href="https://twitter.com/fujitawaki">X</a></p>
+    </div>
   </footer>
 </body>
 </html>
