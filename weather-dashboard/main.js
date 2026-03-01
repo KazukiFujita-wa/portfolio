@@ -15,9 +15,24 @@ searchBtn.addEventListener("click", async () => {
   try {
     // ① 都市名から緯度経度を取得（OpenCage）
     const geoUrl = `https://api.opencagedata.com/geocode/v1/json?q=${encodeURIComponent(city)}&key=${OPEN_CAGE_API_KEY}&language=ja&pretty=1`;
+    // const geoRes = await fetch(geoUrl);
+    // const geoData = await geoRes.json();
     const geoRes = await fetch(geoUrl);
+
+    if (!geoRes.ok) {
+      throw new Error("位置情報APIエラー: " + geoRes.status);
+    }
+
     const geoData = await geoRes.json();
-    
+
+    // OpenCageのステータス確認
+    if (geoData.status.code !== 200) {
+      throw new Error("位置情報取得失敗: " + geoData.status.message);
+    }
+
+    if (!geoData.results || geoData.results.length === 0) {
+      throw new Error("位置情報が見つかりません。");
+    }
     if (!geoData.results || geoData.results.length === 0) {
       throw new Error("位置情報が見つかりません。");
     }
