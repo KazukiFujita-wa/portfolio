@@ -29,10 +29,9 @@ searchBtn.addEventListener("click", async () => {
     if (geoData.status.code !== 200) {
       throw new Error("位置情報取得失敗: " + geoData.status.message);
     }
+    
+    console.log(geoData);
 
-    if (!geoData.results || geoData.results.length === 0) {
-      throw new Error("位置情報が見つかりません。");
-    }
     if (!geoData.results || geoData.results.length === 0) {
       throw new Error("位置情報が見つかりません。");
     }
