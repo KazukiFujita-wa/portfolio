@@ -13,12 +13,9 @@ searchBtn.addEventListener("click", async () => {
   }
 
   try {
-    // ① 都市名から緯度経度を取得（OpenCage）
-    // const geoUrl = `https://api.opencagedata.com/geocode/v1/json?q=${encodeURIComponent(city)}&key=${OPEN_CAGE_API_KEY}&language=ja&pretty=1`;
     // ① 都市名から緯度経度を取得（Open-Meteo）
     const geoUrl = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(city)}&count=1&language=ja`;
-    // const geoRes = await fetch(geoUrl);
-    // const geoData = await geoRes.json();
+
     const geoRes = await fetch(geoUrl);
 
     if (!geoRes.ok) {
@@ -26,19 +23,26 @@ searchBtn.addEventListener("click", async () => {
     }
 
     const geoData = await geoRes.json();
-    
     console.log(geoData);
 
+    // 検索結果チェック
     if (!geoData.results || geoData.results.length === 0) {
-      throw new Error("位置情報が見つかりません。");
+      throw new Error("位置情報が見つかりません。都市名を変更してください。");
     }
 
-    const { lat, lng } = geoData.results[0].geometry;
+    // ★ここが修正ポイント（Open-Meteo形式）
+    const lat = geoData.results[0].latitude;
+    const lng = geoData.results[0].longitude;
 
-    // ② 緯度経度から天気を取得（Open-Meteo）
-    // 例：天気取得 URL に “jma” モデルオプションを入れる
+    // ② 天気取得
     const weatherUrl = `https://api.open-meteo.com/v1/jma?latitude=${lat}&longitude=${lng}&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m`;
+
     const weatherRes = await fetch(weatherUrl);
+
+    if (!weatherRes.ok) {
+      throw new Error("天気APIエラー: " + weatherRes.status);
+    }
+
     const weatherData = await weatherRes.json();
 
     if (!weatherData.current) {
@@ -46,6 +50,7 @@ searchBtn.addEventListener("click", async () => {
     }
 
     displayWeather(city, weatherData);
+
   } catch (err) {
     showError(err.message);
   }
