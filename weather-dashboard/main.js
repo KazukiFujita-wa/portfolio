@@ -26,11 +26,6 @@ searchBtn.addEventListener("click", async () => {
     }
 
     const geoData = await geoRes.json();
-
-    // OpenCageのステータス確認
-    if (geoData.status.code !== 200) {
-      throw new Error("位置情報取得失敗: " + geoData.status.message);
-    }
     
     console.log(geoData);
 
