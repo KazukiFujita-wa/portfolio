@@ -14,7 +14,9 @@ searchBtn.addEventListener("click", async () => {
 
   try {
     // ① 都市名から緯度経度を取得（OpenCage）
-    const geoUrl = `https://api.opencagedata.com/geocode/v1/json?q=${encodeURIComponent(city)}&key=${OPEN_CAGE_API_KEY}&language=ja&pretty=1`;
+    // const geoUrl = `https://api.opencagedata.com/geocode/v1/json?q=${encodeURIComponent(city)}&key=${OPEN_CAGE_API_KEY}&language=ja&pretty=1`;
+    // ① 都市名から緯度経度を取得（Open-Meteo）
+    const geoUrl = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(city)}&count=1&language=ja`;
     // const geoRes = await fetch(geoUrl);
     // const geoData = await geoRes.json();
     const geoRes = await fetch(geoUrl);
