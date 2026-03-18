@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CONTACT | NEON BYTE STUDIO</title>
+  <meta name="description" content="NEON BYTE STUDIOへのお問い合わせはこちらから。ゲームに関するご意見、ご質問、ビジネスに関するお問い合わせなど、お気軽にご連絡ください。">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animation.css">
+</head>
+<body style="padding-top: 80px;">
+
+  <!-- Header -->
+  <header data-include="compornents/header.html"></header>
+
+  <main>
+    <!-- Page Title -->
+    <section class="page-title">
+      <div class="container">
+        <h1>CONTACT</h1>
+        <p>お問い合わせ</p>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-section">
+      <div class="container">
+        <p class="section-text">
+          NEON BYTE STUDIOへのお問い合わせは、以下のフォームよりお願いいたします。<br>
+          内容を確認後、担当者よりご連絡させていただきます。
+        </p>
+
+        <form action="#" method="POST" class="contact-form">
+          <div class="form-group">
+            <label for="name">お名前 <span class="required">必須</span></label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">メールアドレス <span class="required">必須</span></label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="subject">件名 <span class="required">必須</span></label>
+            <input type="text" id="subject" name="subject" required>
+          </div>
+          <div class="form-group">
+            <label for="message">お問い合わせ内容 <span class="required">必須</span></label>
+            <textarea id="message" name="message" rows="8" required></textarea>
+          </div>
+          <div class="form-group checkbox-group">
+            <input type="checkbox" id="privacy" name="privacy" required>
+            <label for="privacy">
+              <a href="#" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a>に同意する <span class="required">必須</span>
+            </label>
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="btn">送信する</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer data-include="compornents/footer.html"></footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/animation.js"></script>
+</body>
+</html>

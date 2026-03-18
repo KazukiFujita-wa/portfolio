@@ -3,142 +3,127 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NEON BYTE STUDIO</title>
-  <!-- Tailwind / AOS -->
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-  <!-- カスタムCSS -->
+  <title>NEON BYTE STUDIO - 最高の物語を、世界へ。</title>
+  <meta name="description" content="NEON BYTE STUDIOは、最高の物語体験を創造するゲームスタジオです。世界中のプレイヤーに感動と興奮を届けます。">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animation.css">
 </head>
-<body class="text-gray-800">
+<body style="padding-top: 80px;">
 
-  <!-- ヘッダー読込 -->
-  <div data-include="partials/header.html"></div>
+  <!-- Header -->
+  <header data-include="compornents/header.html"></header>
 
-  <!-- メインビジュアル -->
-  <section class="hero">
-    <div class="hero-content" data-aos="fade-up">
-      <p>NEON</p>
-      <p>BYTE</p>
-      <p>STUDIO</p>
-      <a href="service.html" class="hero-btn">↓ scroll</a>
-    </div>
-  </section>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero__video-wrapper">
+        <!-- 仮の背景として黒背景を用意。動画や画像に差し替えを推奨 -->
+        <div style="background-color: #000; width: 100%; height: 100%;"></div>
+      </div>
+      <div class="hero__content">
+        <h2 class="hero__title">最高の物語を、世界へ。</h2>
+        <p class="hero__subtitle">Create the Future of Entertainment</p>
+      </div>
+      <div class="hero__scroll-down">
+        <span>Scroll</span>
+      </div>
+    </section>
 
-  <!-- NEWS -->
-  <section class="py-16 bg-gray-50">
-    <div class="container mx-auto px-6 text-center">
-      <h3 class="text-2xl font-bold mb-10" data-aos="fade-up">NEWS</h3>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-lg shadow" data-aos="fade-up">
-          <h4 class="font-bold mb-3">人材紹介</h4>
-          <p>即戦力人材の採用支援を行います。</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow" data-aos="fade-up" data-aos-delay="100">
-          <h4 class="font-bold mb-3">キャリア支援</h4>
-          <p>転職希望者に最適なキャリアを提案します。</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow" data-aos="fade-up" data-aos-delay="200">
-          <h4 class="font-bold mb-3">コンサルティング</h4>
-          <p>企業の採用課題を解決する戦略を立案します。</p>
+    <!-- News Section -->
+    <section class="home-section news">
+      <div class="container">
+        <h2 class="section-title">NEWS</h2>
+        <ul class="news-list">
+          <li class="news-list__item">
+            <a href="news.html#news-1">
+              <time class="news-list__date" datetime="2024-03-18">2024.03.18</time>
+              <span class="news-list__title">新作RPG『Shadow Protocol』の公式サイトがオープン</span>
+            </a>
+          </li>
+          <li class="news-list__item">
+            <a href="news.html#news-2">
+              <time class="news-list__date" datetime="2024-03-10">2024.03.10</time>
+              <span class="news-list__title">『Neon Arena』シーズン2が開幕！新キャラクター追加</span>
+            </a>
+          </li>
+          <li class="news-list__item">
+            <a href="news.html#news-3">
+              <time class="news-list__date" datetime="2024-02-25">2024.02.25</time>
+              <span class="news-list__title">『Cyber Raiders』が全世界1000万ダウンロードを突破</span>
+            </a>
+          </li>
+        </ul>
+        <div class="section-more">
+          <a href="news.html" class="btn">MORE</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 会社情報 -->
-  <section class="py-16 bg-gray-50">
-    <div class="container mx-auto px-6 text-center">
-      <h3 class="text-2xl font-bold mb-10" data-aos="fade-up">会社情報</h3>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-lg shadow" data-aos="fade-up">
-          <h4 class="font-bold mb-3">人材紹介</h4>
-          <p>即戦力人材の採用支援を行います。</p>
+    <!-- Games Section -->
+    <section class="home-section games">
+      <div class="container">
+        <h2 class="section-title">GAMES</h2>
+        <div class="games-list">
+          <a href="games/shadow-protocol.html" class="game-card">
+            <div class="game-card__image-wrapper">
+              <img src="images/games/shadow-protocol.svg" alt="Shadow Protocol">
+            </div>
+            <h3 class="game-card__title">Shadow Protocol</h3>
+          </a>
+          <a href="games/neon-arena.html" class="game-card">
+            <div class="game-card__image-wrapper">
+              <img src="images/games/neon-arena.svg" alt="Neon Arena">
+            </div>
+            <h3 class="game-card__title">Neon Arena</h3>
+          </a>
+          <a href="games/cyber-raiders.html" class="game-card">
+            <div class="game-card__image-wrapper">
+              <img src="images/games/cyber-raiders.svg" alt="Cyber Raiders">
+            </div>
+            <h3 class="game-card__title">Cyber Raiders</h3>
+          </a>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow" data-aos="fade-up" data-aos-delay="100">
-          <h4 class="font-bold mb-3">キャリア支援</h4>
-          <p>転職希望者に最適なキャリアを提案します。</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow" data-aos="fade-up" data-aos-delay="200">
-          <h4 class="font-bold mb-3">コンサルティング</h4>
-          <p>企業の採用課題を解決する戦略を立案します。</p>
+        <div class="section-more">
+          <a href="games.html" class="btn">MORE</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ゲーム情報 -->
-  <section class="py-16 bg-gray-50">
-    <div class="container mx-auto px-6 text-center">
-      <h3 class="text-2xl font-bold mb-10" data-aos="fade-up">私たちのサービス</h3>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-lg shadow" data-aos="fade-up">
-          <h4 class="font-bold mb-3">人材紹介</h4>
-          <p>即戦力人材の採用支援を行います。</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow" data-aos="fade-up" data-aos-delay="100">
-          <h4 class="font-bold mb-3">キャリア支援</h4>
-          <p>転職希望者に最適なキャリアを提案します。</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow" data-aos="fade-up" data-aos-delay="200">
-          <h4 class="font-bold mb-3">コンサルティング</h4>
-          <p>企業の採用課題を解決する戦略を立案します。</p>
+    <!-- About Section -->
+    <section class="home-section about">
+      <div class="container">
+        <h2 class="section-title">ABOUT US</h2>
+        <p class="about__text">
+          NEON BYTE STUDIOは、「最高の物語体験」を創造するゲームスタジオです。<br>
+          テクノロジーとアートの融合により、世界中のプレイヤーに忘れられない感動と興奮を届けます。
+        </p>
+        <div class="section-more">
+          <a href="about.html" class="btn">MORE</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- サービス -->
-  <section class="py-16 bg-gray-50">
-    <div class="container mx-auto px-6 text-center">
-      <h3 class="text-2xl font-bold mb-10" data-aos="fade-up">サービス</h3>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-lg shadow" data-aos="fade-up">
-          <h4 class="font-bold mb-3">人材紹介</h4>
-          <p>即戦力人材の採用支援を行います。</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow" data-aos="fade-up" data-aos-delay="100">
-          <h4 class="font-bold mb-3">キャリア支援</h4>
-          <p>転職希望者に最適なキャリアを提案します。</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow" data-aos="fade-up" data-aos-delay="200">
-          <h4 class="font-bold mb-3">コンサルティング</h4>
-          <p>企業の採用課題を解決する戦略を立案します。</p>
+    <!-- Recruit Section -->
+    <section class="home-section recruit">
+       <div class="container">
+        <h2 class="section-title">RECRUIT</h2>
+        <p class="recruit__text">
+          世界を驚かせる物語を、共に創りませんか？<br>
+          あなたの情熱と才能を、NEON BYTE STUDIOで開花させてください。
+        </p>
+        <div class="section-more">
+          <a href="recruit.html" class="btn">MORE</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 採用情報 -->
-  <section class="py-16 bg-gray-50">
-    <div class="container mx-auto px-6 text-center">
-      <h3 class="text-2xl font-bold mb-10" data-aos="fade-up">採用情報</h3>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-lg shadow" data-aos="fade-up">
-          <h4 class="font-bold mb-3">人材紹介</h4>
-          <p>即戦力人材の採用支援を行います。</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow" data-aos="fade-up" data-aos-delay="100">
-          <h4 class="font-bold mb-3">キャリア支援</h4>
-          <p>転職希望者に最適なキャリアを提案します。</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow" data-aos="fade-up" data-aos-delay="200">
-          <h4 class="font-bold mb-3">コンサルティング</h4>
-          <p>企業の採用課題を解決する戦略を立案します。</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  </main>
 
-  <!-- フッター読込 -->
-  <div data-include="partials/footer.html"></div>
+  <!-- Footer -->
+  <footer data-include="compornents/footer.html"></footer>
 
-  <!-- JS読込 -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="js/include.js"></script>
-  <script>
-    AOS.init({ duration: 1000 });
-  </script>
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/animation.js"></script>
 </body>
 </html>
